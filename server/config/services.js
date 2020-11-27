@@ -43,7 +43,7 @@
 module.exports = {
   service1: {
     api: '/product_scroller',
-    url: 'http://54.172.160.204:3001/',
+    url: 'http://34.229.55.54:3001/',
     bundle: 'bundle.js',
   },
   service2: {
