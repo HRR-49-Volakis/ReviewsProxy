@@ -57,8 +57,8 @@ module.exports = {
     bundle: 'bundle.js',
   },
   service4: {
-    api: '/*',
+    api: '/reviews_toggle/',
     url: 'http://18.224.65.20:3004/',
     bundle: 'bundle.js',
-  },
+  }
 };
