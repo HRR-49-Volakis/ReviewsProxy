@@ -6,6 +6,8 @@ const router = require('./router');
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 const app = express();
 
+require('newrelic');
+
 app.use(morgan('dev'));
 app.use(express.static(PUBLIC_DIR));
 
@@ -13,5 +15,9 @@ app.use(express.static(PUBLIC_DIR));
 app.use('/bundles', router.bundles);
 // Handling AJAX requests to the API by passing off requests to the api router
 app.use('/api', router.api);
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+})
 
 module.exports = app;
